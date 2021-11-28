@@ -13,3 +13,5 @@ wordCount = sum([w.strip(string.punctuation).isalpha() for w in toBeCounted.spli
 """The punctuations/special characters/digits in toBeCounted string input will be stripped and confirmed to be alphabets.
 All stripped w's will then be split into a list in a loop which will be summed up
 """
+
+vowel = consonant = 0 # initializations (for creating variables with changing values)
