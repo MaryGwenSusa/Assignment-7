@@ -15,3 +15,6 @@ All stripped w's will then be split into a list in a loop which will be summed u
 """
 
 vowel = consonant = 0 # initializations (for creating variables with changing values)
+toBeCounted = toBeCounted.lower()
+"""Convert input to lower case to lessen the if conditions read by the program
+"""
