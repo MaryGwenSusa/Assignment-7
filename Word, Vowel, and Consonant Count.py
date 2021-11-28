@@ -18,3 +18,8 @@ vowel = consonant = 0 # initializations (for creating variables with changing va
 toBeCounted = toBeCounted.lower()
 """Convert input to lower case to lessen the if conditions read by the program
 """
+
+for v in toBeCounted: # 97 = lowercase a; 101 = lowercase e; 105 = lowercase i; 111 = lowercase o; 117 = lowercase u; 122 = lowercase z
+    if(ord(v) == 97 or ord(v) == 101 or ord(v) == 105
+       or ord(v) == 111 or ord(v) == 117):
+        vowel+=1
