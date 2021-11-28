@@ -23,3 +23,7 @@ for v in toBeCounted: # 97 = lowercase a; 101 = lowercase e; 105 = lowercase i; 
     if(ord(v) == 97 or ord(v) == 101 or ord(v) == 105
        or ord(v) == 111 or ord(v) == 117):
         vowel+=1
+    elif(ord(v) >= 97 and ord(v) <= 122):
+        consonant+=1
+"""Utilization of American Standard Code for Information Interchange table to represent certain alphabets and minimize the program
+"""
