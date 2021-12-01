@@ -35,3 +35,5 @@ def validPassword(inputPassword):
 
 header()      
 print(validPassword.__doc__) # this will print the docstring indicated in the defined function
+password = input('\033[91mInput:\033[00m ')
+validPassword(password)
