@@ -15,3 +15,6 @@ def validPassword(inputPassword):
     """
     specialSymbol = ['$','@','#','!','%','&','(',')','*','+',',','-','.',';','/',':','<','=','>','?','[',']','^','_','{','|','}','~']
     inputValue = True
+    if not len(inputPassword):
+        print("\033[41mEmpty string was entered!\033[00m")
+        exit(0)
