@@ -32,3 +32,6 @@ def validPassword(inputPassword):
         inputValue = False
     elif inputValue:
         print('\033[46mOutput: \033[3mValid\033[00m')
+
+header()      
+print(validPassword.__doc__) # this will print the docstring indicated in the defined function
