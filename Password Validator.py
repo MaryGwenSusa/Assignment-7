@@ -21,3 +21,6 @@ def validPassword(inputPassword):
     if len(inputPassword) < 15:
         print('The length of password should be \033[4m\033[32mgreater than 15 characters.\033[0m')    
         inputValue = False
+    if not any(char.isupper() for char in inputPassword): # determines if there is no letter in uppercase in inputPassword characters
+        print('The password should have at least \033[4m\033[33mone uppercase letter.\033[0m')  
+        inputValue = False
