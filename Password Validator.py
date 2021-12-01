@@ -89,3 +89,36 @@ header()
 print(validPassword.__doc__) # this will print the docstring indicated in the defined function
 password = input('\033[91mInput:\033[00m ')
 validPassword(password)
+
+
+# another version (minimal)
+from string import punctuation as p
+def header():
+    title = "**Password Validator**"
+    print("*" * len(title)) # created a header design
+    print(title)
+    print("*" * len(title))
+
+def passwordEval():
+    """\033[4mEvaluate if the input is valid as a password.\033[0m
+
+    These are the conditions need to be met:
+    if its greater than \033[3m\033[32m15 characters\033[0m;
+    if it has at least \033[3m\033[34mone uppercase letter\033[0m;
+    if it has at least \033[3m\033[35mone numeral\033[0m; and
+    if it has any of the \033[3m\033[36mspecial characters (!#$%&()*+,-./:;<=>?@[\]^_{|}~)\033[0m.
+    """      
+    password = input('\033[1m\033[33mInput:\033[0m ')
+    initial = [0, 0, 0] # initialization (for creating variables with changing values)
+    for cha in password:
+        if cha.isupper():
+            initial[0] = 123456789
+        elif cha in p:
+            initial[1] = 123456789
+        elif cha.isdigit():
+            initial[2] = 123456789
+    print('\033[3m\033[31mOutput:\033[0m \033[4mValid\033[0m') if len(password) > 15 and 0 not in initial else print('\033[3m\033[31mOutput:\033[0m \033[4mInvalid\033[0m')
+
+header()
+print(passwordEval.__doc__)
+passwordEval()
