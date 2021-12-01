@@ -30,3 +30,5 @@ def validPassword(inputPassword):
     if not any(char in specialSymbol for char in inputPassword): # determines if there is no special symbol in inputPassword characters
         print('The password should have at least \033[4m\033[35mone special character (!#$%&()*+,-./:;<=>?@[\]^_{|}~).\033[0m')
         inputValue = False
+    elif inputValue:
+        print('\033[46mOutput: \033[3mValid\033[00m')
