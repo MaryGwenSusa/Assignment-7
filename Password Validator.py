@@ -91,7 +91,7 @@ password = input('\033[91mInput:\033[00m ')
 validPassword(password)
 
 
-# another version (minimal)
+# another version (minimal); focused on not matching the initialized values/list; won't display a reminder for needed conditions to be met every unsatisfied input
 from string import punctuation as p
 def header():
     title = "**Password Validator**"
@@ -118,6 +118,47 @@ def passwordEval():
         elif cha.isdigit():
             initial[2] = 123456789
     print('\033[3m\033[31mOutput:\033[0m \033[4mValid\033[0m') if len(password) > 15 and 0 not in initial else print('\033[3m\033[31mOutput:\033[0m \033[4mInvalid\033[0m')
+
+header()
+print(passwordEval.__doc__)
+passwordEval()
+
+
+# same logic as the third version but utilizes different functions instead of initialized values
+def header():
+    title = "**Password Validator**"
+    print("*" * len(title)) # created a header design
+    print(title)
+    print("*" * len(title))
+
+def passwordEval():
+    """\033[4mEvaluate if the input is valid as a password.\033[0m
+
+    These are the conditions need to be met:
+    Should contain more than \033[3m\033[32m15 characters\033[0m;
+    Should contain at least \033[3m\033[34mone uppercase letter\033[0m;
+    Should contain at least \033[3m\033[35mone numeral\033[0m; and
+    Should contain any of the \033[3m\033[36mspecial characters (!"#$%&()*+,-./:;<=>?@[\]^_`{|}~)\033[0m.
+    """  
+    password = input('\033[1m\033[33mInput:\033[0m ')
+    initialList = set()
+    specialSymbol = ['$','@','#','!','%','&','(',')','*','+',',','-','.',';','/',':','<','=','>','?','[',']','^','_','{','|','}','~']
+    for cha in password:
+        if(cha.isupper()):
+            initialList.add('1') # has a similarity with .append(), .insert(), and .extend() which adds element onto the called function set() (initialList as variable)
+        elif(cha.isdigit()) :
+            initialList.add('2') # has a similarity with .append(), .insert(), and .extend() which adds element onto the called function set() (initialList as variable)
+        elif(cha in specialSymbol):
+            initialList.add('3') # has a similarity with .append(), .insert(), and .extend() which adds element onto the called function set() (initialList as variable)
+    if not len(password):
+            print("\033[41mEmpty string was entered!\033[00m")
+            exit(0)
+    elif len(password) > 15:
+        initialList.add('4') # has a similarity with .append(), .insert(), and .extend() which adds element onto the called function set() (initialList as variable)
+    if len(initialList) is 4:
+        print ("\033[3m\033[31mOutput:\033[0m \033[4mValid\033[0m")
+    else:
+        print("\033[3m\033[31mOutput:\033[0m \033[4mInvalid\033[0m")
 
 header()
 print(passwordEval.__doc__)
