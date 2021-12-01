@@ -24,3 +24,6 @@ def validPassword(inputPassword):
     if not any(char.isupper() for char in inputPassword): # determines if there is no letter in uppercase in inputPassword characters
         print('The password should have at least \033[4m\033[33mone uppercase letter.\033[0m')  
         inputValue = False
+    if not any(char.isdigit() for char in inputPassword): # determines if there is no digit in inputPassword characters
+        print('The password should have at least \033[4m\033[34mone numeral.\033[0m')
+        inputValue = False
