@@ -124,7 +124,7 @@ print(passwordEval.__doc__)
 passwordEval()
 
 
-# same logic as the third version but utilizes different functions instead of initialized values
+# same logic as the third version but utilizes different functions for initialized values
 def header():
     title = "**Password Validator**"
     print("*" * len(title)) # created a header design
