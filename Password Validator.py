@@ -18,3 +18,6 @@ def validPassword(inputPassword):
     if not len(inputPassword):
         print("\033[41mEmpty string was entered!\033[00m")
         exit(0)
+    if len(inputPassword) < 15:
+        print('The length of password should be \033[4m\033[32mgreater than 15 characters.\033[0m')    
+        inputValue = False
