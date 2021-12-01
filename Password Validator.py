@@ -12,4 +12,6 @@ def validPassword(inputPassword):
     if it has at least \033[3m\033[34mone uppercase letter\033[0m;
     if it has at least \033[3m\033[35mone numeral\033[0m; and
     if it has any of the \033[3m\033[36mspecial characters (!#$%&()*+,-./:;<=>?@[\]^_{|}~)\033[0m.
-    """  
+    """
+    specialSymbol = ['$','@','#','!','%','&','(',')','*','+',',','-','.',';','/',':','<','=','>','?','[',']','^','_','{','|','}','~']
+    inputValue = True
